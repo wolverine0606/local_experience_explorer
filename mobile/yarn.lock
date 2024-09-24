@@ -3472,6 +3472,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-google-signin/google-signin@npm:^13.1.0":
+  version: 13.1.0
+  resolution: "@react-native-google-signin/google-signin@npm:13.1.0"
+  peerDependencies:
+    expo: ">=50.0.0"
+    react: "*"
+    react-dom: "*"
+    react-native: "*"
+  peerDependenciesMeta:
+    expo:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: f3e4032e8c5ef36c180f17a5c01cd054c0ea732def808f06871a768204bfdc5a3cdcbc3fa6f1d57aa564b5adb71cf861a3420f5c48d10e2ed9a0e6556adc498b
+  languageName: node
+  linkType: hard
+
 "@react-native/assets-registry@npm:0.75.2":
   version: 0.75.2
   resolution: "@react-native/assets-registry@npm:0.75.2"
@@ -9853,6 +9870,7 @@ __metadata:
     "@babel/runtime": "npm:^7.20.0"
     "@react-native-firebase/app": "npm:^20.5.0"
     "@react-native-firebase/auth": "npm:^20.5.0"
+    "@react-native-google-signin/google-signin": "npm:^13.1.0"
     "@react-native/babel-preset": "npm:0.75.2"
     "@react-native/eslint-config": "npm:0.75.2"
     "@react-native/metro-config": "npm:0.75.2"
