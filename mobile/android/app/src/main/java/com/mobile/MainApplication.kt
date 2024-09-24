@@ -1,4 +1,5 @@
 package com.mobile
+import com.oblador.vectoricons.VectorIconsPackage;
 import android.content.res.Configuration
 import expo.modules.ApplicationLifecycleDispatcher
 import expo.modules.ReactNativeHostWrapper

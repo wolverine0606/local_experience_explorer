@@ -1,23 +1,12 @@
 import React from 'react';
 import {AppNavigator} from './navigation/navigators/App';
-import {View} from 'react-native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {ThemeProvider} from '@react-navigation/native';
-import {createTheme} from '@rneui/themed';
-
-const theme = createTheme({
-  lightColors: {
-    primary: '#e7e7e8',
-  },
-  darkColors: {
-    primary: '#000',
-  },
-  mode: 'light',
-});
+import {darkTheme} from './theme';
+import {ThemeProvider} from '@shopify/restyle';
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={darkTheme}>
       <SafeAreaProvider>
         <AppNavigator />
       </SafeAreaProvider>
