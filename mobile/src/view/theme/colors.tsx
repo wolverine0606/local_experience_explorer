@@ -11,6 +11,7 @@ export const DARK_COLOR_PALETTE = {
   secondary: {
     0: '#000000',
     50: '#FFDB33',
+    100: '#FFFFFF',
   },
   tertiary: {
     50: '#ff0d29',
@@ -52,6 +53,7 @@ export const LIGHT_COLOR_PALETTE: typeof DARK_COLOR_PALETTE = {
   secondary: {
     0: '#000000',
     50: '#FFDB33',
+    100: '#FFFFFF',
   },
   tertiary: {
     50: '#ff0d29',

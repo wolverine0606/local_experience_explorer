@@ -27,6 +27,7 @@ const darkTheme = createTheme({
 
     primaryContainer: DARK_COLOR_PALETTE.primary[100],
     onPrimaryContainer: DARK_COLOR_PALETTE.primary[50],
+    secondaryContainer: DARK_COLOR_PALETTE.secondary[100],
     onSecondaryContainer: DARK_COLOR_PALETTE.secondary[0],
     onTertiaryContainer: DARK_COLOR_PALETTE.tertiary[50],
 

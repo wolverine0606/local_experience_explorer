@@ -4,16 +4,11 @@ import React, {useEffect, useState} from 'react';
 import {Button, Text, View} from 'react-native';
 import {AppStackParamList} from '../../navigation/navigators/types';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {useAppNavigation} from '../../../utils/useAppNavigation';
 
 export const DiscoverScreen = () => {
-  const nav = useNavigation<NativeStackNavigationProp<AppStackParamList>>();
-  useEffect(() => {
-    nav.setOptions({
-      // headerRight: () => (
-      //   <Button title="Update count" onPress={() => setCount(c => c + 1)} />
-      // ),
-    });
-  }, [nav]);
+  const nav = useAppNavigation();
+
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Icon.Button name="facebook" size={30} color="#900" />

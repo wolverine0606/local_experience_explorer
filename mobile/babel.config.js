@@ -1,20 +1,20 @@
 module.exports = {
-  presets: ['module:@react-native/babel-preset'],
+  presets: ['module:metro-react-native-babel-preset'],
   plugins: [
     [
-      'module:react-native-dotenv',
+      'module-resolver',
       {
-        envName: 'APP_ENV',
-        moduleName: '@env',
-        path: '.env',
-        blocklist: null,
-        allowlist: null,
-        blacklist: null, // DEPRECATED
-        whitelist: null, // DEPRECATED
-        safe: false,
-        allowUndefined: true,
-        verbose: false,
+        root: ['./src'],
+        alias: {
+          '~': './src',
+          utils: './src/utils',
+        },
       },
     ],
+    'react-native-reanimated/plugin',
+    ['@babel/plugin-transform-class-properties', {loose: true}], // Ensure loose mode is the same
+    ['@babel/plugin-transform-private-methods', {loose: true}], // Ensure loose mode is the same
+    ['@babel/plugin-transform-private-property-in-object', {loose: true}],
+    'module:react-native-dotenv',
   ],
 };
