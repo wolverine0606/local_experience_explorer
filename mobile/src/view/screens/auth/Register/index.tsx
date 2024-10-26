@@ -10,25 +10,35 @@ import {useScreen} from './useScreen';
 import {AppBox} from '~/view/components';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {useTogglePasswordVisibility} from '~/utils/useTogglePasswordVisibility';
-import {useRef, useState} from 'react';
+import {useRef} from 'react';
+import {AppPressable} from '~/view/components/buttons/AppPressable';
+import {AnimatedButton} from '~/view/components/buttons/AnimatedButton';
 
 export const RegisterScreen = () => {
-  const {onEmailChange, onPasswordChange, email, password} = useScreen();
-  const {colors, spacing, borderRadii, otherSizes, iconSizes} = useAppTheme();
+  const {onEmailChange, onPasswordChange, email, password, onLoginPress} =
+    useScreen();
+  const {colors, spacing, otherSizes, iconSizes} = useAppTheme();
+
   const iconRef = useRef(null);
-  console.log('rerender', password);
+
+  const disabled = false;
 
   const {rightIcon, handlePasswordVisibility, passwordVisibility} =
     useTogglePasswordVisibility();
+
   return (
     <SafeAreaView
-      style={{flex: 1, justifyContent: 'center', rowGap: spacing.l}}>
+      style={{
+        flex: 1,
+        justifyContent: 'flex-end',
+        rowGap: spacing.l,
+        marginHorizontal: spacing.s,
+      }}>
       <AppBox
         borderRadius="m"
         borderColor="onSurfaceVariant"
         borderWidth={otherSizes.xxxxs}
-        padding="m"
-        marginHorizontal="s">
+        padding="m">
         <TextInput
           keyboardAppearance="dark"
           style={{color: colors.onSurfaceVariant}}
@@ -48,8 +58,7 @@ export const RegisterScreen = () => {
         justifyContent="space-between"
         borderColor="onSurfaceVariant"
         borderWidth={otherSizes.xxxxs}
-        padding="m"
-        marginHorizontal="s">
+        padding="m">
         <TextInput
           keyboardAppearance="dark"
           style={{
@@ -62,7 +71,7 @@ export const RegisterScreen = () => {
           onChangeText={onPasswordChange}
           value={password}
         />
-        <Pressable onPress={handlePasswordVisibility}>
+        <AppPressable onPress={handlePasswordVisibility}>
           <Icon
             ref={iconRef}
             name={rightIcon}
@@ -70,7 +79,15 @@ export const RegisterScreen = () => {
             solid
             size={iconSizes.s}
           />
-        </Pressable>
+        </AppPressable>
+      </AppBox>
+      <AppBox justifyContent="flex-end" flex={0.5} pb="s">
+        <AnimatedButton
+          disabled={disabled}
+          title={'login'}
+          onPress={onLoginPress}
+          type="tonal"
+        />
       </AppBox>
     </SafeAreaView>
   );

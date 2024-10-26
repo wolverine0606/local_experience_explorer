@@ -1,17 +1,15 @@
-import {useNavigation} from '@react-navigation/native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import React, {useEffect, useState} from 'react';
-import {Button, Text, View} from 'react-native';
-import {AppStackParamList} from '../../navigation/navigators/types';
+import React from 'react';
+import {Button, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useAppNavigation} from '../../../utils/useAppNavigation';
+import {AppIcon} from '~/view/components/icons/AppIcon';
 
 export const DiscoverScreen = () => {
   const nav = useAppNavigation();
 
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Icon.Button name="facebook" size={30} color="#900" />
+      <AppIcon name={'Logo'} />
       <Button
         title="go back"
         onPress={() =>

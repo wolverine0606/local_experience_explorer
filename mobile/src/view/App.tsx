@@ -5,12 +5,15 @@ import {darkTheme} from './theme';
 import {ThemeProvider} from '@shopify/restyle';
 import {Text, View} from 'react-native';
 import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
+import {KeyboardProvider} from 'react-native-keyboard-controller';
 
 const App = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <SafeAreaProvider>
-        <AppNavigator />
+        <KeyboardProvider statusBarTranslucent>
+          <AppNavigator />
+        </KeyboardProvider>
       </SafeAreaProvider>
     </ThemeProvider>
   );
